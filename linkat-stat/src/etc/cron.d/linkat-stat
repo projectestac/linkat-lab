@@ -1,0 +1,2 @@
+SHELL=/bin/bash
+@reboot root /usr/local/bin/linkat-stat.sh

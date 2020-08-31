@@ -1,0 +1,7 @@
+linkat-chromeos (18.04-1.0~2) bionic; urgency=low
+
+  * Correccions menors. S'incorpora la possibilitat d'actualitzar paquets.
+
+  * Initial release 1.0~1
+
+ -- Joan de Gracia <joan.degracia@gmail.com>  Mon, 26 Aug 2020 12:00:00 +0200

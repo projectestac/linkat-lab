@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Encoding=UTF-8
+Name=Aplicacions Linkat
+Comment=Instal·lador aplicacions Linkat
+Exec=/usr/share/linkat/linkat-chromeos/linkat-chromeos.sh
+Icon=linkat-logo
+Terminal=false
+Categories=Utility;Application;

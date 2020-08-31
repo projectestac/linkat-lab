@@ -1,0 +1,10 @@
+Package: linkat-chromeos
+Version: 18.04-1.0~2
+Architecture: all
+Maintainer: Joan de Gracia <joan.degracia@gmail.com>
+Installed-Size: 28
+Depends: zenity, curl, x11-utils, apt-utils, lsb-release
+Section: misc
+Priority: optional
+Description: Instal·lador aplicacions GNU/Linux.
+ - Programa per instal·lar aplicacions GNU/Linux en CHROMEOS.
