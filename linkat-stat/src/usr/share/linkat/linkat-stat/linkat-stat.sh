@@ -7,6 +7,7 @@
 #        Àrea de Cultura Digital - Departament d'Educació
 # Data: 2020/08/31
 # Llicència GPL 3.0
+# Dependències: nmap, dbus, dmidecode, virt-what
 #
 WAIT_TIME="5m"
 if [ ! -f /etc/lk-machine-id ]; then
@@ -26,15 +27,19 @@ if [ $ARCH == "x86_64" ]; then
 else
    ARCH="i386"
 fi
+VIRTUALIZATION="$(virt-what |head -n1)"
+if [ -z "$VIRTUALIZATION" ]; then
+   VIRTUALIZATION="physical"
+fi
 URL="download-linkat.xtec.cat"
 CADENA="STAT-LK"
 UBUNTU_DESKTOP="$(apt list *ubuntu-desktop 2>/dev/null |grep -i instal |cut -d "/" -f 1)"
 case $UBUNTU_DESKTOP in
 ubuntu-desktop)
-   LINKAT_DESKTOP="ESTANDARD"
+   LINKAT_DESKTOP="gnome"
 ;;
 lubuntu-desktop)
-   LINKAT_DESKTOP="LLEUGERA"
+   LINKAT_DESKTOP="lxde"
 ;;
 esac
 #
@@ -61,7 +66,7 @@ do
    	   let 'CURRENT_TEST_IP +=1'
    	else
    	   CURRENT_TEST_IP=0
-           sleep $WAIT_TIME
+         sleep $WAIT_TIME
       fi
    else
       FLAG=1
@@ -86,11 +91,11 @@ do
    	   let 'CURRENT_CHECK +=1'
    	else
    	   CURRENT_CHECK=0
-           sleep $WAIT_TIME
+         sleep $WAIT_TIME
       fi
    else
       FLAG=1
    fi
 done  
-curl -s $URL/${CADENA}_${ID_MACHINE}_${EXTERNAL_IP}_${VERSION}_${ARCH}_${LINKAT_DESKTOP} -o /dev/null
+curl -s $URL/${CADENA}_${ID_MACHINE}_${EXTERNAL_IP}_${VERSION}_${LINKAT_DESKTOP}_${ARCH}_${VIRTUALIZATION} -o /dev/null
 exit 0
