@@ -9,9 +9,11 @@
 # Llicència GPL 3.0
 # Dependències: nmap, dbus, dmidecode, virt-what
 #
-
+OD=$(which od)
 COUNTER=0
+LIMIT_COUNTER=4
 FLAG=0
+
 if [ ! -f /etc/lk-stat-counter ]; then
    echo $COUNTER > /etc/lk-stat-counter
    FLAG=1
@@ -20,7 +22,7 @@ else
    let 'COUNTER += 1'
    echo $COUNTER > /etc/lk-stat-counter
 fi
-let 'COUNTER %= 4'
+let 'COUNTER %= LIMIT_COUNTER'
 if [ $COUNTER -eq 0 ] || [ $FLAG -eq 1 ]; then
    echo "0" > /etc/lk-stat-counter
    WAIT_TIME="5m"
@@ -50,12 +52,12 @@ if [ $COUNTER -eq 0 ] || [ $FLAG -eq 1 ]; then
    #
    # Checking Network Connectivity
    #
-   OD=$(which od)
+
    ESPERA=$($OD -A n -N 2 -t u2 /dev/urandom )
    let 'ESPERA %= 32' # mòdul -> residu: 0-31
    let 'ESPERA += 58'
    # sleep 1s -> 1 segon / sleep 1m -> 1 minut
-   sleep $ESPERA
+   #sleep $ESPERA
    FLAG=0
    TEST_IPS="educaciodigital.cat ubuntu.com wikipedia.org"
    TARGET=($(echo $TEST_IPS))
