@@ -38,7 +38,7 @@ if [ $COUNTER -eq 0 ] || [ $FLAG -eq 1 ]; then
    fi
    URL="download-linkat.xtec.cat"
    CADENA="STAT-LK"
-   UBUNTU_DESKTOP="$(apt list *ubuntu-desktop 2>/dev/null |grep -i instal |cut -d "/" -f 1)"
+   UBUNTU_DESKTOP="$(LANG=C apt list *ubuntu-desktop 2>/dev/null |grep -i "instal\|upgra" |cut -d "/" -f 1)"
    case $UBUNTU_DESKTOP in
    ubuntu-desktop)
       LINKAT_DESKTOP="gnome"
