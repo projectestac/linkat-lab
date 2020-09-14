@@ -55,7 +55,7 @@ if [ $COUNTER -eq 0 ] || [ $FLAG -eq 1 ]; then
    let 'ESPERA %= 32' # mòdul -> residu: 0-31
    let 'ESPERA += 58'
    # sleep 1s -> 1 segon / sleep 1m -> 1 minut
-   #sleep $ESPERA
+   sleep $ESPERA
    FLAG=0
    TEST_IPS="educaciodigital.cat ubuntu.com wikipedia.org"
    TARGET=($(echo $TEST_IPS))
