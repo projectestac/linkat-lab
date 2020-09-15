@@ -5,12 +5,11 @@
 # Autor: Joan de Gracia
 #        Projecte Linkat
 #        Àrea de Cultura Digital - Departament d'Educació
-# Data: 2020/09/14
+# Data: 2020/09/15
 # Llicència GPL 3.0
-# Dependències: nmap, dbus, dmidecode, virt-what
+# Dependències: nmap, dmidecode, virt-what
 #
 OD=$(which od)
-echo "0" > /etc/lk-stat-counter
 WAIT_TIME="5m"
 ID_MACHINE="$(/usr/sbin/dmidecode -s system-uuid | sha1sum | cut -d " " -f 1)"
 VERSION="$(lsb_release -r| sed -e 's/\t//g' |cut -d ":" -f 2)"
