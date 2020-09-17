@@ -1,2 +1,2 @@
 SHELL=/bin/bash
-@reboot root /usr/share/linkat/linkat-stat/linkat-stat.sh
+@reboot root /usr/share/linkat/linkat-stat/linkat-stat.sh BOOT

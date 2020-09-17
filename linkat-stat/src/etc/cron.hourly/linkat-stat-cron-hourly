@@ -1,0 +1,2 @@
+#!/bin/bash
+/usr/share/linkat/linkat-stat/linkat-stat.sh HOURLY
