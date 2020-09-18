@@ -1,11 +1,11 @@
 #!/bin/bash
 #
 # Nom del script: linkat-stat.sh
-# Versió 1.2
+# Versió 1.3
 # Autor: Joan de Gracia
 #        Projecte Linkat
 #        Àrea de Cultura Digital - Departament d'Educació
-# Data: 2020/09/17
+# Data: 2020/09/18
 # Llicència GPL 3.0
 # Dependències: nmap, dmidecode, virt-what
 #
@@ -25,6 +25,18 @@ if [ $ARCH == "x86_64" ]; then
 else
    ARCH="i386"
 fi
+
+if [ $VERSION == "14.04" ] || [ $VERSION == "18.04" ]; then
+   COMPUTER="$(LANG=C apt list linkat-server linkat-servidor 2>/dev/null |grep -i "instal\|upgra" |cut -d "/" -f 1)"
+   if [ -z $COMPUTER ]; then
+      COMPUTER="workstation"
+   else
+      COMPUTER="server" 
+   fi 
+else
+   COMPUTER="workstation"
+fi
+
 VIRT="$(/usr/sbin/virt-what |head -n1)"
 VIRTUALIZATION="$(echo "$VIRT" | sed 's/[ ]\+/-/g')"
 if [ -z "$VIRT" ]; then
@@ -65,5 +77,5 @@ do
       FLAG=1
    fi
 done
-curl -s $URL/${CADENA}_${ID_MACHINE}_${VERSION}_${LINKAT_DESKTOP}_${ARCH}_${VIRTUALIZATION} -o /dev/null
+curl -s $URL/${CADENA}_${ID_MACHINE}_${VERSION}_${LINKAT_DESKTOP}_${ARCH}_${COMPUTER}_${VIRTUALIZATION} -o /dev/null
 exit 0
