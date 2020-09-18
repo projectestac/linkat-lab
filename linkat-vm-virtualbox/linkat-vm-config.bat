@@ -20,7 +20,6 @@ goto :pregunta
 :si
 
 call linkat-vm-parameters.bat
-mkdir "%USERPROFILE%/Desktop/VBOX_FOLDER" 2>null
 "C:\Program Files\Oracle\VirtualBox\VBoxManage.exe" createvm --name "%VM_NAME%" --ostype Ubuntu_64 --default --register
 "C:\Program Files\Oracle\VirtualBox\VBoxManage.exe" modifyvm "%VM_NAME%" --ostype "Ubuntu_64" --memory 4096 --paravirtprovider kvm --cpus 2 --graphicscontroller vmsvga --vram 128 --ioapic on --biosapic apic --nic1 nat --nictype1 virtio --cableconnected1 on --macaddress1 auto --boot1  disk --boot2 none --boot3 none --boot4 none --pae on --nestedpaging on --nested-hw-virt off
 "C:\Program Files\Oracle\VirtualBox\VBoxManage.exe" storagectl "%VM_NAME%" --name SATA --hostiocache on
