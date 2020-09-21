@@ -11,11 +11,11 @@
 #
 START=$1
 OD=$(which od)
-WAIT_TIME="5m"
+WAIT_TIME=5m
+MAX_RANDOM_TIME=$2
 ESPERA=$($OD -A n -N 2 -t u2 /dev/urandom )
-let 'ESPERA %= 32' # mòdul -> residu: 0-31
+let 'ESPERA %= MAX_RANDOM_TIME' # mòdul -> residu: 0-31
 let 'ESPERA += 60'
-# sleep 1s -> 1 segon / sleep 1m -> 1 minut
 sleep $ESPERA
 ID_MACHINE="$(/usr/sbin/dmidecode -s system-uuid | sha1sum | cut -d " " -f 1)"
 VERSION="$(/usr/bin/lsb_release -r| sed -e 's/\t//g' |cut -d ":" -f 2)"
