@@ -14,7 +14,7 @@ OD=$(which od)
 WAIT_TIME=5m
 MAX_RANDOM_TIME=$2
 ESPERA=$($OD -A n -N 2 -t u2 /dev/urandom )
-let 'ESPERA %= MAX_RANDOM_TIME' # mòdul -> residu: 0-31
+let 'ESPERA %= MAX_RANDOM_TIME' # mòdul
 let 'ESPERA += 60'
 sleep $ESPERA
 ID_MACHINE="$(/usr/sbin/dmidecode -s system-uuid | sha1sum | cut -d " " -f 1)"
