@@ -9,6 +9,9 @@
 # Llicència GPL 3.0
 # Dependències: nmap, dmidecode, virt-what
 #
+if [ "$(ps aux |grep linkat-stat |grep HOURLY | wc -l )"  -gt 1 ]; then
+   exit 0
+fi
 START=$1
 OD=$(which od)
 WAIT_TIME=5m
@@ -43,6 +46,7 @@ if [ -z "$VIRT" ]; then
    VIRTUALIZATION="physical"
 fi
 URL="download-linkat.xtec.cat"
+URL="linkat.eu"
 CADENA="STAT-LK"-"$1"
 UBUNTU_DESKTOP="$(LANG=C apt list *ubuntu-desktop 2>/dev/null |grep -i "instal\|upgra" |cut -d "/" -f 1)"
 case $UBUNTU_DESKTOP in
