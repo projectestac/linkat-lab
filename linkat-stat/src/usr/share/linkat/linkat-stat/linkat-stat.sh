@@ -9,7 +9,7 @@
 # Llicència GPL 3.0
 # Dependències: nmap, dmidecode, virt-what
 #
-if [ "$(ps aux |grep linkat-stat |grep HOURLY | wc -l )"  -gt 1 ]; then
+if [ "$(ps aux |grep linkat-stat |grep HOURLY | wc -l )"  -gt 2 ]; then
    exit 0
 fi
 START=$1
