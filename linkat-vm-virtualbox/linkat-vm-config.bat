@@ -23,7 +23,7 @@ if exist linkat-vm-flag (
    "C:\Program Files\Oracle\VirtualBox\VBoxManage.exe" storageattach "%VM_NAME%" --storagectl SATA --port 0 --type hdd --type hdd --medium none
    "C:\Program Files\Oracle\VirtualBox\VBoxManage.exe" storageattach "%VM_NAME%" --storagectl SATA --port 0 --type hdd --type hdd --medium %VM_DISK% --mtype multiattach
    "C:\Program Files\Oracle\VirtualBox\VBoxManage.exe" snapshot "%VM_NAME%" take %VM_SNAPSHOOT%
-   "C:\Program Files\Oracle\VirtualBox\VBoxManage.exe" sharedfolder add "%VM_NAME%" --name="HOST_FOLDER" --hostpath="%VM_SHARED_FOLDER%" --automount
+   "C:\Program Files\Oracle\VirtualBox\VBoxManage.exe" sharedfolder add "%VM_NAME%" --name "HOST_FOLDER" --hostpath "%VM_SHARED_FOLDER%" --automount
 )
 exit
 
