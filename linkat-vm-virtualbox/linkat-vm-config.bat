@@ -6,6 +6,7 @@ REM        Projecte Linkat
 REM        Àrea de Cultura Digital - Departament d'Educació
 REM Data: 2020/09/29
 REM Llicència GPL 3.0
+REM Versió VirtualBox 6.1.14
 REM
 
 @ECHO OFF
