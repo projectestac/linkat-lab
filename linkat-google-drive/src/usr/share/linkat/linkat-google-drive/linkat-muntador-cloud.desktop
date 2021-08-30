@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Terminal=false
+Name=Client Google Drive
+Comment=Client Google Drive - OCAMLFUSE
+Exec=/usr/share/linkat/linkat-google-drive/muntador-cloud.sh
+Icon=/usr/share/linkat/linkat-google-drive/muntador-cloud.svg
+Categories=GNOME;GTK;Utility;
