@@ -1,0 +1,2 @@
+SHELL=/bin/bash
+@reboot root /usr/share/linkat/linkat-lock-edc/linkat-lock-edc.sh

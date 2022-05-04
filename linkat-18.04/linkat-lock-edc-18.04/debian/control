@@ -1,0 +1,15 @@
+Source: linkat-lock-edc
+Section: misc
+Priority: optional
+Maintainer: Joan de Gracia <joan.degracia@gmail.com>
+Build-Depends: debhelper (>= 9.0.0)
+Standards-Version: 4.1.4
+Homepage: 
+#Vcs-Git: git://git.debian.org/collab-maint/linkat-lock-edc.git
+#Vcs-Browser: http://git.debian.org/?p=collab-maint/linkat-lock-edc-18.04.git;a=summary
+
+Package: linkat-lock-edc
+Architecture: all
+Depends: ${misc:Depends}, dmidecode, lsb-release, libglib2.0-bin, grub2-common, bleachbit
+Description: Programa per blocar equips del PEDC.
+ - Programa per blocar remotament els equipaments Linkat del PEDC.
