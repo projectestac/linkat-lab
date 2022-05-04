@@ -1,0 +1,15 @@
+Source: linkat-mblock
+Section: misc
+Priority: optional
+Maintainer: Joan de Gracia <joan.degracia@gmail.com>
+Build-Depends: debhelper (>= 9.0.0)
+Standards-Version: 4.1.4
+Homepage: 
+#Vcs-Git: git://git.debian.org/collab-maint/linkat-mblock.git
+#Vcs-Browser: http://git.debian.org/?p=collab-maint/linkat-mblock-18.04.git;a=summary
+
+Package: linkat-mblock
+Architecture: all
+Depends: ${misc:Depends}, ideservice, mlink
+Description: mblock és una eina de programació STEAM.
+ - Aquest paquet facilita l'ús del programari mblock en Linkat.

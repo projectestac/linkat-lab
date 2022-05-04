@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Terminal=true
+Exec=/usr/bin/mblock-mlink start
+Name[ca]=mLink start
+Name=mLink start
+Icon=/usr/share/linkat/linkat-mblock/mlink-start.png
+Categories=Education;Development;

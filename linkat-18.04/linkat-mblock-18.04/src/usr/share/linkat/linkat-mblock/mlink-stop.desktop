@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Terminal=false
+Exec=/usr/bin/mblock-mlink stop
+Name[ca]=mLink stop
+Name=mLink stop
+Icon=/usr/share/linkat/linkat-mblock/mlink-stop.png
+Categories=Education;Development;

@@ -1,9 +1,0 @@
-[Desktop Entry]
-Version=1.0
-Type=Application
-Terminal=false
-Name=Configurador Google Drive
-Comment=Configurador Google Drive - OCAMLFUSE
-Exec=/usr/share/linkat/linkat-google-drive/configura-cloud.sh
-Icon=/usr/share/linkat/linkat-google-drive/configura-cloud.svg
-Categories=GNOME;GTK;Utility;

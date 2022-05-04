@@ -1,0 +1,8 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Terminal=false
+Exec=xdg-open https://ide.makeblock.com/
+Name=mBlock Web
+Icon=/usr/share/linkat/linkat-mblock/mono-browser2.svg
+Categories=Education;Development;
