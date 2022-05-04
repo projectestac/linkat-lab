@@ -1,0 +1,15 @@
+Source: linkat-reassigna-equips-edc
+Section: misc
+Priority: optional
+Maintainer: Joan de Gracia <joan.degracia@gmail.com>
+Build-Depends: debhelper (>= 9.0.0)
+Standards-Version: 4.1.4
+Homepage: 
+#Vcs-Git: git://git.debian.org/collab-maint/linkat-lock-edc.git
+#Vcs-Browser: http://git.debian.org/?p=collab-maint/linkat-lock-edc-18.04.git;a=summary
+
+Package: linkat-reassigna-equips-edc
+Architecture: all
+Depends: ${misc:Depends}, lsb-release, yad
+Description: Reassginació d'equips del PEDC.
+ - Programa per reassignar equips del PEDC.

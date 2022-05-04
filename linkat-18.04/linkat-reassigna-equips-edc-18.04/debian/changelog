@@ -1,0 +1,7 @@
+linkat-reassigna-equips-edc (18.04-1.0~2) bionic; urgency=low
+
+  * Release 1.0~2: Detecció via CA restabliment equip local (script
+    linkat-reassigna-equip-edc-local.sh)
+  * Initial release 1.0~1
+
+ -- Joan de Gracia <joan.degracia@gmail.com>  Wed, 02 Mar 2022 12:00:00 +0200

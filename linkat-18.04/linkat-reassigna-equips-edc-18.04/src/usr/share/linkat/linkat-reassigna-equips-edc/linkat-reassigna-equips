@@ -1,0 +1,5 @@
+suport ALL=(ALL) NOPASSWD: /usr/share/linkat/linkat-reassigna-equips-edc/linkat-reassigna-equip.sh
+u-alta ALL=(ALL) NOPASSWD: /usr/share/linkat/linkat-reassigna-equips-edc/linkat-alta-usuaris-edc.sh
+u-alta ALL=(ALL) NOPASSWD: /usr/share/linkat/linkat-reassigna-equips-edc/linkat-lightdm-autologin.sh
+u-alta ALL=(ALL) NOPASSWD: /usr/share/linkat/linkat-reassigna-equips-edc/linkat-reassigna-equip-marca.sh
+u-alta ALL=(ALL) NOPASSWD: /bin/systemctl

@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Name=Reassignació d'equips Linkat
+Icon=/usr/share/linkat/linkat-reassigna-equips-edc/linkat-reassigna-equips.png
+Exec=sudo /usr/share/linkat/linkat-reassigna-equips-edc/linkat-reassigna-equip.sh
+Terminal=false
+Type=Application
+StartupNotify=true
+Categories=GNOME;GTK;System;
+

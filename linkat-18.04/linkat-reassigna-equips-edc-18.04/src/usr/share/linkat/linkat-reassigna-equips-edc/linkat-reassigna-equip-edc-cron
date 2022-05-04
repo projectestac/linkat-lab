@@ -1,0 +1,3 @@
+SHELL=/bin/bash
+@reboot root /usr/share/linkat/linkat-reassigna-equips-edc/linkat-remove-u-alta.sh
+@reboot root /usr/share/linkat/linkat-reassigna-equips-edc/linkat-reassigna-equip-edc-boot.sh
