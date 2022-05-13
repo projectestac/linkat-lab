@@ -1,0 +1,27 @@
+linkat-caf-fix (18.04-1.0~8) bionic; urgency=low
+
+  * Release 1.0~8
+       S'habiliten els serveis amagent i sdagent. Es comprova l'scalability
+       server.
+
+  * Release 1.0~7
+       S'instal·la paquet virtual CA - Reassignació local del portàtil
+
+  * Release 1.0~6
+       Actualització del fitxer /opt/config/config-ca.sh
+
+  * Release 1.0~5
+       Actualització del fitxer CSV - Centres (2022-01-13)
+
+  * Release 1.0~4
+       Actualització del fixer CSV - Centres- Scalability Servers
+     
+  * Release 1.0~3
+       Correccions menors i canvi de protocol UDP a TCP segons fabricant.
+
+  * Release 1.0~2
+       Canvi de protocol UDP a TCP de l'agent de CA. 
+
+  * Initial release 1.0~1
+
+ -- Joan de Gracia <joan.degracia@gmail.com>  Fri, 21 May 2021 20:00:00 +0200

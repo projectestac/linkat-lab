@@ -1,0 +1,17 @@
+Source: linkat-caf-fix
+Section: misc
+Priority: optional
+Maintainer: Joan de Gracia <joan.degracia@gmail.com>
+Build-Depends: debhelper (>= 9.0.0)
+Standards-Version: 4.1.4
+Homepage: 
+#Vcs-Git: git://git.debian.org/collab-maint/linkat-caf-fix.git
+#Vcs-Browser: http://git.debian.org/?p=collab-maint/linkat-caf-fix-18.04.git;a=summary
+
+Package: linkat-caf-fix
+Architecture: all
+Depends: ${misc:Depends}, diffutils, dos2unix, nmap
+Description: Correcció CA
+ - Aquest fix accelera el tancament del programa CA.
+   Assigna menor prioritat als agents de CA.
+   Canvia el protocol de connexió UDP a TCP.
