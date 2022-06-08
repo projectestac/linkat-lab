@@ -1,0 +1,14 @@
+linkat-mp-maqueta-corporativa (18.04-1.0~3) bionic; urgency=low
+
+  * Release 1.0~3: Afegides noves dependències: onlyoffice-desktopeditors,
+    fonts-crosextra-carlito, fonts-takao-gothic, fonts-takao-pgothic,
+    fonts-crosextra-caladea
+
+  * Release 1.0~2: Dependència amb els paquets linkat-libreoffice, 
+    linkat-usuari-corporatiu-custom, keyutils, pavucontrol, openjdk11-jre,
+    ocrfeeder, tesseract-ocr, tesseract-ocr-cat, tesseract-ocr-spa,
+    tesseract-ocr-eng, tesseract-ocr-fra
+
+  * Initial release 1.0~1
+
+ -- Joan de Gracia <joan.degracia@gmail.com>  Mon, 15 Feb 2021 12:00:00 +0200

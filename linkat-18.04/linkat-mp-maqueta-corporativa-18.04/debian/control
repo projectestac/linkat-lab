@@ -1,0 +1,16 @@
+Source: linkat-mp-maqueta-corporativa
+Section: misc
+Priority: optional
+Maintainer: Joan de Gracia <joan.degracia@gmail.com>
+Build-Depends: debhelper (>= 9.0.0)
+Standards-Version: 4.1.4
+Homepage: 
+#Vcs-Git: git://git.debian.org/collab-maint/linkat-mp-edc.git
+#Vcs-Browser: http://git.debian.org/?p=collab-maint/linkat-mp-edc-18.04.git;a=summary
+
+Package: linkat-mp-maqueta-corporativa
+Architecture: all
+Depends: ${misc:Depends}, linkat-serveis-corporatius, linkat-webapps-corporatiu, linkat-terminal-3270, linkat-mp-signatura-electronica, linkat-caf-fix-corporatiu, linkat-mp-opensc, linkat-libreoffice, linkat-usuari-corporatiu-custom, keyutils, pavucontrol, openjdk-11-jre, ocrfeeder, tesseract-ocr, tesseract-ocr-cat, tesseract-ocr-spa, tesseract-ocr-eng, tesseract-ocr-fra, onlyoffice-desktopeditors, fonts-crosextra-carlito, fonts-takao-gothic, fonts-takao-pgothic, fonts-crosextra-caladea 
+Description: Metapaquet utilitzat per preparar les maquetes Linkat.
+ Paquet utilitzat per preparar les maquetes corporatives Linkat.
+ (metapackage)

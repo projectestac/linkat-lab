@@ -1,0 +1,11 @@
+Package: linkat-mp-maqueta-corporativa
+Version: 18.04-1.0~3
+Architecture: all
+Maintainer: Joan de Gracia <joan.degracia@gmail.com>
+Installed-Size: 9
+Depends: linkat-serveis-corporatius, linkat-webapps-corporatiu, linkat-terminal-3270, linkat-mp-signatura-electronica, linkat-caf-fix-corporatiu, linkat-mp-opensc, linkat-libreoffice, linkat-usuari-corporatiu-custom, keyutils, pavucontrol, openjdk-11-jre, ocrfeeder, tesseract-ocr, tesseract-ocr-cat, tesseract-ocr-spa, tesseract-ocr-eng, tesseract-ocr-fra, onlyoffice-desktopeditors, fonts-crosextra-carlito, fonts-takao-gothic, fonts-takao-pgothic, fonts-crosextra-caladea
+Section: misc
+Priority: optional
+Description: Metapaquet utilitzat per preparar les maquetes Linkat.
+ Paquet utilitzat per preparar les maquetes corporatives Linkat.
+ (metapackage)
