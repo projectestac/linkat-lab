@@ -1,0 +1,15 @@
+Source: linkat-usuari-corporatiu-custom
+Section: misc
+Priority: optional
+Maintainer: Joan de Gracia <joan.degracia@gmail.com>
+Build-Depends: debhelper (>= 9.0.0)
+Standards-Version: 4.1.4
+Homepage: 
+#Vcs-Git: git://git.debian.org/collab-maint/linkat-usuari-corporatiu-custom.git
+#Vcs-Browser: http://git.debian.org/?p=collab-maint/linkat-usuari-corporatiu-custom-18.04.git;a=summary
+
+Package: linkat-usuari-corporatiu-custom
+Architecture: all
+Depends: ${misc:Depends}, lsb-release
+Description: Configura el perfil d'escriptori de l'usuari corporatiu.
+ - Aplica configuracions específiques a l'escriptori de l'usuari corporatiu.

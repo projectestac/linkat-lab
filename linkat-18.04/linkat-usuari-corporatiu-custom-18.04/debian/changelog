@@ -1,0 +1,10 @@
+linkat-usuari-corporatiu-custom (18.04-1.0~3) bionic; urgency=low
+
+  * Release 1.0~3: Modificacions script de personalització per amagar icona de
+    xarxa
+
+  * Release 1.0~2: Configuració del navegador Chromium perquè utilitzi DNI-e
+
+  * Initial release 1.0~1
+
+ -- Joan de Gracia <joan.degracia@gmail.com>  Wed, 13 Apr 2022 12:00:00 +0200
