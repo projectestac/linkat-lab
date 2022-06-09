@@ -1,0 +1,16 @@
+Source: katas
+Section: misc
+Priority: optional
+Maintainer: Joan de Gracia <joan.degracia@gmail.com>
+Build-Depends: debhelper (>= 10.0.0)
+Standards-Version: 4.1.4
+Homepage: 
+#Vcs-Git: https://gitlab.com/HaskellKatas/katas--proof-of-concept
+
+Package: katas
+Architecture: all
+Depends: ${misc:Depends}, xdotool, wmctrl, gnome-terminal, inotify-tools, cdargs, wget, emacs, xbindkeys, meld, python3-pygments, libpcre3, libpcre3-dev, libffi-dev, libgmp-dev, zlib1g-dev, xterm, fonts-dejavu-core
+Description: Newk is a bash script to set up and perform Haskell programming.
+ - Newk is a bash script to set up and perform Haskell programming katas using
+   TDD methodology, git, and other standard tools. We recommend using it with
+   the Codewars's katas (https://www.codewars.com/)

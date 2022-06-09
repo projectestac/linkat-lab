@@ -1,0 +1,41 @@
+## newk shortcuts
+#
+#"Terminal window from which the kata was launched"
+"newk -p"
+  shift+alt + p
+
+#"Quit kata environment (main windows)"
+"newk -q"
+  shift+alt + q
+
+# Show Terminal initial window
+"wmctrl -a 'HaskellKatas'"
+  shift+alt + 0
+
+# Show "stack ghci" window
+"wmctrl -a 'stack ghci' ; wmctrl -a 'git diff' ; sleep 0.2 ; xdotool key alt+1"
+  shift+alt + 1
+
+# Show "git diff" window
+"wmctrl -a 'git diff' ; wmctrl -a 'stack ghci' ; sleep 0.2 ; xdotool key alt+2"
+  shift+alt + 2
+
+# Show "stack build" window
+"wmctrl -a 'stack build'"
+  shift+alt + 3
+
+# Show "Command - git" window
+"wmctrl -a 'Command - git'"
+  shift+alt + 4
+
+# Show editor window (emacs)
+"wmctrl -a 'KATA: '"
+  shift+alt + 5
+
+# Show Firefox's window of title: 'Solutions | Codewars - Mozilla Firefox
+"wmctrl -a '| Codewars - Mozilla Firefox'"
+  shift+alt + 6
+
+# Show Chromium's window of title: 'Codewars - Chromium'
+"wmctrl -a '| Codewars - Chromium'"
+  shift+alt + 7

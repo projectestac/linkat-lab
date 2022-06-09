@@ -1,0 +1,13 @@
+katas (20.04-1.0~3) focal; urgency=low
+
+  * Release 1.0~3
+    - Incorporación del binario haskellstack ( https://get.haskellstack.org/).
+
+  * Release 1.0~2
+    - Creación de enlaces simbólicos al directori /bin. Enlaces: newk,
+      haskellstack.
+
+  * Initial release 1.0~1
+    - Paquete inicial
+
+ -- Joan de Gracia <joan.degracia@gmail.com>  Thu, 09 Jun 2022 20:00:00 +0200

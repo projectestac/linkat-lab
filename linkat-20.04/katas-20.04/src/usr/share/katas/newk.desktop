@@ -1,0 +1,8 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Terminal=true
+Name=Newk
+Exec=/usr/share/katas/newk.sh
+Icon=/usr/share/katas/k.png
+Categories=GNOME;GTK;Utility;

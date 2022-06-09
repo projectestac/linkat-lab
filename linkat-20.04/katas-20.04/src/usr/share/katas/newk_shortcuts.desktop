@@ -1,0 +1,6 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Terminal=false
+Name=Katas
+Exec=/usr/share/katas/newk_shortcuts.sh
