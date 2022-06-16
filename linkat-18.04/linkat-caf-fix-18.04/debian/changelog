@@ -1,4 +1,8 @@
-linkat-caf-fix (18.04-1.0~8) bionic; urgency=low
+linkat-caf-fix (18.04-1.0~9) bionic; urgency=low
+
+  * Release 1.0~9
+       S'han modificat els scripts del directori /opt/configuració i l'script
+       linkat-caf-fix per reinstal·lar l'agent de CA des de zero.
 
   * Release 1.0~8
        S'habiliten els serveis amagent i sdagent. Es comprova l'scalability

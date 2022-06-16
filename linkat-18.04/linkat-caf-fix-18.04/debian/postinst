@@ -26,8 +26,9 @@ case "$1" in
 			sed -i '/#sd_jexec\ unit=\.\ shutdown\ >>/a\\t\t\tcaf\ kill\ all\ \>\/dev\/null 2>&1' /etc/init.d/CA-DSM 
 		fi
 	fi
-	if [  -e /usr/share/linkat/linkat-caf-fix/linkat-caf-fix.sh ]; then 
-		chmod 750 /usr/share/linkat/linkat-caf-fix/linkat-caf-fix.sh
+	if [  -d /usr/share/linkat/linkat-caf-fix ]; then 
+		chmod 750 /usr/share/linkat/linkat-caf-fix/*.sh
+		chown root:root /usr/share/linkat/linkat-caf-fix/*.sh
 	fi
 	if [ -e /usr/share/linkat/linkat-caf-fix/linkat-caf-cron ]; then
 		cp /usr/share/linkat/linkat-caf-fix/linkat-caf-cron /etc/cron.d/.
@@ -36,13 +37,10 @@ case "$1" in
 	if [ -e /usr/share/linkat/linkat-caf-fix/scala_centro_CA.csv ]; then
 		chmod 640 /usr/share/linkat/linkat-caf-fix/scala_centro_CA.csv
 	fi
-	if [ -e /usr/share/linkat/linkat-caf-fix/config-ca.sh ]; then
-		chmod 755 /usr/share/linkat/linkat-caf-fix/config-ca.sh
-	fi	
 	if [ -d /opt/configuracio ]; then
-		cp /usr/share/linkat/linkat-caf-fix/config-ca.sh /opt/configuracio/config-ca.sh
-		chmod 755 /opt/configuracio/config-ca.sh
-		chown root:root /opt/configuracio/config-ca.sh
+		cp /usr/share/linkat/linkat-caf-fix/config*.sh /opt/configuracio/
+		chmod 750 /opt/configuracio/*.sh
+		chown root:root /opt/configuracio/config*.sh
 	fi
 	if [ -n "$(grep mnt-recuperacio /etc/fstab)" ]; then
 		if [ -z "$(mount |grep mnt-recuperacio)" ]; then
