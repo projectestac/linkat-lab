@@ -246,7 +246,7 @@ if [ ! -f $config_file ]; then
 # S'intenta obtenir el codi de centre a través de l'usuari de la wifi gencat_ens_edu
 #
 		IDENTITY="$(find /etc/NetworkManager/system-connections -type f \( -iname "*gencat_ens_edu*" \) -exec grep -i identity '{}'  \;)"
-		ccentre="$(echo $IDENTITY | sort | uniq | cut -d "=" -f 2 | sed 's/^.//')"
+		ccentre="$(echo $IDENTITY | sort | uniq | cut -d "=" -f 2 | sed 's/ .*//' | sed 's/^.//')"
 		if [ -z $ccentre ]; then
 			ccentre="99999999"
 			Scala="dm1.lkca.cat"
