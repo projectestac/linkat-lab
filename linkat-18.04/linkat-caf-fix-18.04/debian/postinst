@@ -36,6 +36,7 @@ case "$1" in
 	invoke-rc.d cron reload >/dev/null 2>&1
 	if [ -e /usr/share/linkat/linkat-caf-fix/scala_centro_CA.csv ]; then
 		chmod 640 /usr/share/linkat/linkat-caf-fix/scala_centro_CA.csv
+		chown root:root /usr/share/linkat/linkat-caf-fix/scala_centro_CA.csv
 	fi
 	if [ -d /opt/configuracio ]; then
 		cp /usr/share/linkat/linkat-caf-fix/config*.sh /opt/configuracio/
