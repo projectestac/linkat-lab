@@ -1,4 +1,12 @@
-linkat-caf-fix (18.04-1.0~9) bionic; urgency=low
+linkat-caf-fix (18.04-1.0~11) bionic; urgency=low
+ 
+  * Release 1.0~11
+       S'han descomentat les línies de l'script configura-equip.sh que
+       actualitzen el sistema operatiu.
+
+  * Release 1.0~10
+       S'ha corregit un bug a l'script config-ca.sh per tal de detectar
+       automàticament el codi de centre.
 
   * Release 1.0~9
        S'han modificat els scripts del directori /opt/configuració i l'script

@@ -1,0 +1,12 @@
+Package: linkat-caf-fix
+Version: 18.04-1.0~11
+Architecture: all
+Maintainer: Joan de Gracia <joan.degracia@gmail.com>
+Installed-Size: 41
+Depends: diffutils, dos2unix, nmap
+Section: misc
+Priority: optional
+Description: Correcció CA
+ - Aquest fix accelera el tancament del programa CA.
+   Assigna menor prioritat als agents de CA.
+   Canvia el protocol de connexió UDP a TCP.
