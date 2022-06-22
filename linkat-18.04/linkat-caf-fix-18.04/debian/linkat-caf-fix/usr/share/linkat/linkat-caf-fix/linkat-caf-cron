@@ -1,2 +1,0 @@
-SHELL=/bin/bash
-@reboot root /usr/share/linkat/linkat-caf-fix/linkat-caf-fix.sh > /dev/null 2>&1

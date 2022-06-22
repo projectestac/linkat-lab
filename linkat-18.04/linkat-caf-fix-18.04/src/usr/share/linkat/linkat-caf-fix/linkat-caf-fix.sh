@@ -111,7 +111,7 @@ function install_ca {
 		rm -rf /opt/CA
 	fi
 	if [ -d /opt/configuracio ]; then
-		/opt/configuracio/configura-equip.sh CLI >/dev/null 2>&1
+		/opt/configuracio/configura-equip-cli.sh CLI >/dev/null 2>&1
 		check_ca_files
 		rm /opt/configuracio/caf_reinstall_flag
 	fi
@@ -278,7 +278,7 @@ else
 		sleep 5m 	# 5 minuts de marge per poder configurar automàticament CA
 		check_connectivity
 		touch /opt/configuracio/caf_remote_install_flag
-                /opt/configuracio/configura-equip.sh CLI >/dev/null 2>&1
+                /opt/configuracio/configura-equip-cli.sh CLI >/dev/null 2>&1
                 check_ca_files
 		if [ -f /opt/configuracio/caf_remote_install_flag ]; then
 			rm /opt/configuracio/caf_remote_install_flag
