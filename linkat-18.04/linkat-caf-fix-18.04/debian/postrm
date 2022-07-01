@@ -19,27 +19,38 @@ set -e
 # the debian-policy package
 
 case "$1" in 
-    remove|upgrade|failed-upgrade|abort-install|abort-upgrade|disappear)
-    if [ -f /etc/init.d/CA-DSM ]; then
-       if [ -n "$(grep caf\ kill\ all /etc/init.d/CA-DSM)" ]; then
-          sed -i 's/\#sd_jexec\ unit/sd_jexec\ unit/g' /etc/init.d/CA-DSM
-          sed -i '/caf\ kill\ all/d' /etc/init.d/CA-DSM 
-       fi
-    fi
-    if [ -e /etc/cron.d/linkat-caf-cron ]; then
-       rm /etc/cron.d/linkat-caf-cron
-       invoke-rc.d cron reload >/dev/null 2>&1
-    fi
-    ;;
-    purge)
-    if [ -f /etc/init.d/CA-DSM.bak ]; then
-       rm /etc/init.d/CA-DSM.bak
-    fi
-    ;;
-    *)
-        echo "postrm called with unknown argument \`$1'" >&2
-        exit 1
-    ;;
+	remove|upgrade|failed-upgrade|abort-install|abort-upgrade|disappear)
+		if [ -e /usr/share/applications/linkat-caf-status.desktop ]; then
+			rm /usr/share/applications/linkat-caf-status.desktop
+			update-desktop-database
+		fi
+		if [ -f /etc/sudoers.d/linkat-caf-status ]; then
+			rm /etc/sudoers.d/linkat-caf-status
+		fi
+		if [ -f /usr/share/applications/linkat-caf-status.desktop ]; then
+			rm /usr/share/applications/linkat-caf-status.desktop
+			update-desktop-database
+		fi
+		if [ -f /etc/init.d/CA-DSM ]; then
+			if [ -n "$(grep caf\ kill\ all /etc/init.d/CA-DSM)" ]; then
+				sed -i 's/\#sd_jexec\ unit/sd_jexec\ unit/g' /etc/init.d/CA-DSM
+				sed -i '/caf\ kill\ all/d' /etc/init.d/CA-DSM 
+			fi
+		fi
+		if [ -e /etc/cron.d/linkat-caf-cron ]; then
+			rm /etc/cron.d/linkat-caf-cron
+			invoke-rc.d cron reload >/dev/null 2>&1
+		fi
+	;;
+	purge)
+		if [ -f /etc/init.d/CA-DSM.bak ]; then
+			rm /etc/init.d/CA-DSM.bak
+		fi
+	;;
+	*)
+		echo "postrm called with unknown argument \`$1'" >&2
+		exit 1
+	;;
 esac
 
 # dh_installdeb will replace this with shell code automatically

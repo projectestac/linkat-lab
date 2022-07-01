@@ -31,9 +31,17 @@ case "$1" in
 		chown root:root /usr/share/linkat/linkat-caf-fix/*.sh
 	fi
 	if [ -e /usr/share/linkat/linkat-caf-fix/linkat-caf-cron ]; then
-		cp /usr/share/linkat/linkat-caf-fix/linkat-caf-cron /etc/cron.d/.
+		cp /usr/share/linkat/linkat-caf-fix/linkat-caf-cron /etc/cron.d/
+		chmod 644 /etc/cron.d/linkat-caf-cron
 	fi
 	invoke-rc.d cron reload >/dev/null 2>&1
+	if [ -f /usr/share/linkat/linkat-caf-fix/linkat-caf-status ]; then
+		cp /usr/share/linkat/linkat-caf-fix/linkat-caf-status /etc/sudoers.d/
+		chmod 640 /etc/sudoers.d/linkat-caf-status
+	fi
+	if [ -f /usr/share/linkat/linkat-caf-fix/linkat-caf-status.desktop ]; then
+		desktop-file-install /usr/share/linkat/linkat-caf-fix/linkat-caf-status.desktop
+	fi
 	if [ -e /usr/share/linkat/linkat-caf-fix/scala_centro_CA.csv ]; then
 		chmod 640 /usr/share/linkat/linkat-caf-fix/scala_centro_CA.csv
 	fi
@@ -41,6 +49,15 @@ case "$1" in
 		cp /usr/share/linkat/linkat-caf-fix/config*.sh /opt/configuracio/
 		chmod 750 /opt/configuracio/*.sh
 		chown root:root /opt/configuracio/config*.sh
+	fi
+	if [ -f /opt/configuracio/caf_reinstall_flag ]; then
+		rm /opt/configuracio/caf_reinstall_flag
+	fi
+	if [ -f /opt/configuracio/caf_remote_install_flag ]; then
+		rm /opt/configuracio/caf_remote_install_flag
+	fi
+	if [ -f /opt/configuracio/linkat-scala_server_check ]; then
+		rm /opt/configuracio/linkat-scala_server_check
 	fi
 	if [ -n "$(grep mnt-recuperacio /etc/fstab)" ]; then
 		if [ -z "$(mount |grep mnt-recuperacio)" ]; then

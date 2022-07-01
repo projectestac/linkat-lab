@@ -1,4 +1,9 @@
-linkat-caf-fix (18.04-1.0~12) bionic; urgency=low
+linkat-caf-fix (18.04-1.0~13) bionic; urgency=low
+
+  * Release 1.0~13
+       S'ha resolt el bug que hi havia amb un scalability server de CA.
+       S'ha incorporat l'eina linkat-caf-stat.sh perquè l'usuari conegui
+       l'estat de l'agent de CA.
 
   * Release 1.0~12
        S'ha canviat el nom de l'script configura-equip.sh per

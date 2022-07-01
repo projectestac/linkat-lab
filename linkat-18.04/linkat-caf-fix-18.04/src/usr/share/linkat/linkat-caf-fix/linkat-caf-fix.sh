@@ -8,11 +8,13 @@ function scala_server_check {
 		if [ -n "$(mount |grep mnt-recuperacio)" ]; then
 			if [ -f /opt/configuracio/mnt-recuperacio/config/config-ca ]; then
 				SCALA=$(cat /opt/configuracio/mnt-recuperacio/config/config-ca | cut -d ":" -f 2)
+				if [ -n "$(grep "s1.lkca.cat" <<< $SCALA)" ]; then
+		                        SCALA="s1.lkca.cat"
+		                fi
 			else
 				SCALA="dm1.lkca.cat"
 			fi
 		fi
-		sleep 1
 		umount /opt/configuracio/mnt-recuperacio
 		sleep 1
 	fi
@@ -49,42 +51,29 @@ function check_connectivity {
 }
 
 function restart_ca {
-	if [ -d /opt/CA ]; then
-		RESPOSTA_CAF="?"
-		COUNTER_CAF=0
-                while [ -n "$RESPOSTA_CAF" ] && [ $COUNTER_CAF -le 5  ]; do
-                	camclose
-	                sleep 1
-	                cam -c -l
-	                sleep 1
-	                RESPOSTA_CAF="$(caf restart 2>&1 | grep -i retrying)"
-			if [ -n "$RESPOSTA_CAF" ]; then
-	                        let COUNTER_CAF+=1
-        	                sleep 10s
-			else
-				RESPOSTA_CAF=""
-			fi
-                done
-	fi
-	if [ -z "$(pidof -s caf)" ]; then
-		if [ ! -d /opt/CA ]; then
-			install_ca
+	RESPOSTA_CAF="?"
+	COUNTER_CAF=0
+        while [ -n "$RESPOSTA_CAF" ] && [ $COUNTER_CAF -le 5  ]; do
+        	camclose
+                sleep 1
+                cam -c -l
+                sleep 1
+                RESPOSTA_CAF="$(caf restart 2>&1 | grep -i retrying)"
+		if [ -n "$RESPOSTA_CAF" ]; then
+                        let COUNTER_CAF+=1
+	                sleep 10s
 		else
+			RESPOSTA_CAF=""
+		fi
+        done
 #
-# Es reinstal·la l'agent de CA en els casos següents:
-# CAF --> Error Initialisation failed
-# CAF --> Violació de segment
-# Fitxers de control:
-#    caf_reinstall_flag --> fitxer de control que es crea durant el procés de reinstal·lació de CA. Si existeix aquest fitxer
-#                           és perquè s'està reinstal·lant l'agent o bé perquè ha quedat una reinstal·lació sense finalitzar.
-#    caf_remote_install_flag -->  fitxer de control que es crea durant el procés d'instal·lació de CA. Si existeix aquest fitxer
-#                                 és perquè s'està reinstal·lant l'agent o bé perquè ha quedat una instal·lació sense finalitzar.
+# Es reinstal·la l'agent de CA cas que aquest doni un error a l'arrencar.
 #
-			caf > /dev/null 2>&1
-			CAF_OUTPUT=$?
-			if [[ CAF_OUTPUT -ne 0 ]] || [[ -f /opt/configuracio/caf_reinstall_flag ]] || [[ -f /opt/configuracio/caf_remote_install_flag ]]; then
-				install_ca
-			fi
+	if [ -z "$(pidof -s caf)" ]; then
+		caf > /dev/null 2>&1
+		CAF_OUTPUT=$?
+		if [[ CAF_OUTPUT -ne 0 ]] || [[ -f /opt/configuracio/caf_reinstall_flag ]] || [[ -f /opt/configuracio/caf_remote_install_flag ]]; then
+			install_ca
 		fi
 	fi
 }
@@ -110,13 +99,16 @@ function install_ca {
 	if [ -d /opt/CA ]; then
 		rm -rf /opt/CA
 	fi
+	if [ -f /opt/configuracio/caf_remote_install_flag ]; then
+		rm /opt/configuracio/caf_remote_install_flag
+	fi
+	if [ -f /opt/configuracio/linkat-scala_server_check ]; then
+		rm /opt/configuracio/linkat-scala_server_check
+	fi	
 	if [ -d /opt/configuracio ]; then
 		/opt/configuracio/configura-equip-cli.sh CLI >/dev/null 2>&1
 		check_ca_files
 		rm /opt/configuracio/caf_reinstall_flag
-	fi
-	if [ -f /opt/configuracio/caf_remote_install_flag ]; then
-		/opt/configuracio/caf_remote_install_flag
 	fi
 }
 
@@ -251,6 +243,7 @@ if [[ -f /etc/profile.CA ]] && [[ -d /opt/CA ]]; then
 		if [ -z "$(caf setserveraddress |grep lkca |grep running\ ok)" ]; then
 			SCALA=""
 			scala_server_check
+			sleep 5
 			caf setserveraddress $SCALA novalidate
 		else
 			touch /opt/configuracio/linkat-scala_server_check
@@ -286,12 +279,8 @@ else
 		if [ -f /opt/configuracio/linkat-scala_server_check ]; then
 			rm /opt/configuracio/linkat-scala_server_check
 		fi
-#
-# En cas que després d'instal·lació de l'agent de CA aquest no arrenqui, es farà una crida novament al programa linkat-caf-fix
-# que s'encarregarà de tornar-lo a iniciar.
-#
-		if [ -z "$(pidof -s caf)" ]; then
-			/usr/share/linkat/linkat-caf-fix/linkat-caf-fix.sh
+		if [ -f /opt/configuracio/caf_reinstall_flag ]; then
+			rm /opt/configuracio/caf_reinstall_flag
 		fi
 	fi
 fi

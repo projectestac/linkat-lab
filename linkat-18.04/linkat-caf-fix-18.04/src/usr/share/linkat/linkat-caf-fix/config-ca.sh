@@ -107,13 +107,17 @@ function install_ca {
 	fi
 }
 
+#
 # Mira si hay conectividad
+#
 function check_internet {
 	wget -q --spider http://google.com 
 	return $?
 }
 
+#
 # Limpiamos antes de salir
+#
 function clean_house {
 	if [ -f "$mnt_recuperacio/cookies.txt" ]; then
 		rm $mnt_recuperacio/cookies.txt
@@ -129,6 +133,8 @@ function clean_house {
 
 #
 # MAIN
+#
+
 #
 # Requerimos ejecución como root
 #
@@ -161,6 +167,9 @@ fi
 
 # Config nueva (no existe archivo)
 if [ ! -f $config_file ]; then
+#
+# Configuració de CA per GUI
+#
 	if [ $N_PARAMS == 0 ]; then
 		ccentre_conf=1	
 		# Mientras no se confirme o cancele, pedimos ccentre
@@ -237,9 +246,10 @@ if [ ! -f $config_file ]; then
 		done
 	else
 #
-# Configuració de CA per línia d'ordres.
+# Configuració de CA per línia d'ordres:
 # Si no existeix el fitxer de configuració de CA $config_file i es llança l'script configura-equip.sh des de línia d'ordres
-# es pren com a codi de centre el valor 99999999.
+# es pren com a codi de centre el valor 99999999 en cas que no es pugui obtenir aquest codi de la configuració de la wifi
+# gencat_ens_edu
 #
 
 #
@@ -265,7 +275,7 @@ else
 	if [ $N_PARAMS == 0 ]; then
 		ccentre=$(cat $config_file | cut -d ":" -f 1)
 		if [ "$ccentre" != "99999999" ] ;then
-			sudo sudo -u suport DISPLAY=:0.0 zenity --question --width=400 --height=200 --title $title --text "S'ha trobat una configuració anterior, Voleu generar-la de nou? (En cas de respondre negativament a la pregunta, s'utilitzarà el codi de centre ja existent)"
+			sudo sudo -u suport DISPLAY=:0.0 zenity --question --width=400 --height=200 --title $title --text "S'ha trobat una configuració anterior. Voleu generar-la de nou? (En cas de respondre negativament a la pregunta, s'utilitzarà el codi de centre ja existent)"
 			resp=$?
 		else
 #
@@ -294,6 +304,10 @@ else
     else
 		ccentre=$(cat $config_file | cut -d ":" -f 1)
 		Scala=$(cat $config_file | cut -d ":" -f 2)
+		if [ -n "$(grep "s1.lkca.cat" <<< $Scala)" ]; then
+			Scala="s1.lkca.cat"
+			echo "$ccentre:$Scala" > $config_file
+		fi
 		install_ca
     fi
 fi

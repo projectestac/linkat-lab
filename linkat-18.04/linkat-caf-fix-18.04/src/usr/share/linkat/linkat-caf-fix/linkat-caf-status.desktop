@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Terminal=false
+Name=Informació de l'agent de CA
+Comment=Diagnosi de l'agent de CA
+Exec=sudo /usr/share/linkat/linkat-caf-fix/linkat-caf-status.sh
+Icon=/usr/share/linkat/linkat-caf-fix/ca-status.svg
+Categories=GNOME;GTK;System;

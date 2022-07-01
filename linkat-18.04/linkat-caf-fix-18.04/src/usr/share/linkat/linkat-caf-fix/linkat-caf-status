@@ -1,0 +1,1 @@
+suport ALL=(root) NOPASSWD: /usr/share/linkat/linkat-caf-fix/linkat-caf-status.sh
