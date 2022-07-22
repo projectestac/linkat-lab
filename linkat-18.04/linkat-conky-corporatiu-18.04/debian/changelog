@@ -1,0 +1,10 @@
+linkat-conky-corporatiu (18.04-2.0) bionic; urgency=low
+
+  * Release 2.0
+    - Canvis menors / fitxers de configuració
+
+  * Initial release 1.0
+    - Paquet original: Transformacio LT2A
+
+ -- Joan de Gracia <joan.degracia@gmail.com>  Fri, 22 Jul 2022 12:00:00 +0200
+

@@ -1,0 +1,17 @@
+Source: linkat-conky-corporatiu
+Section: misc
+Priority: optional
+Maintainer: Joan de Gracia <joan.degracia@gmail.com>
+Build-Depends: debhelper (>= 9.0.0)
+Standards-Version: 4.1.4
+Homepage: 
+#Vcs-Git: git://git.debian.org/collab-maint/linkat-conky-corporatiu.git
+#Vcs-Browser: http://git.debian.org/?p=collab-maint/linkat-conky-corporatiu-18.04.git;a=summary
+
+Package: linkat-conky-corporatiu
+Architecture: all
+Depends: ${misc:Depends}, lsb-release, conky, virt-what
+Description: Personalització del paquet Conky per a la Linkat.
+ - Mostra el hostame i IP de l'ordinador per pantalla de forma dinàmica.
+ - Aquest paquet està preparat per a la maqueta Linkat
+   dels ordinadors corporatius.

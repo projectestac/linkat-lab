@@ -1,0 +1,6 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Terminal=false
+Name=Monitor
+Exec=/usr/share/linkat/linkat-conky-corporatiu/conky.sh
