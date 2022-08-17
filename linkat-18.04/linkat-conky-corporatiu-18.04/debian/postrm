@@ -26,10 +26,6 @@ case "$1" in
 	if [  -f /etc/xdg/autostart/linkat-conky-corporatiu.desktop ]; then
 		rm /etc/xdg/autostart/linkat-conky-corporatiu.desktop
 	fi
-	ID_CONKY=$(pidof conky)
-	if [ -n "$ID_CONKY" ]; then
-           kill "$ID_CONKY"
-	fi
     ;;
 
     *)
