@@ -1,4 +1,4 @@
-<#
+﻿<#
 Nom del script: linkat-vm-start.bat
 Versió: 1.0
 Autor: Joan de Gracia
@@ -8,7 +8,6 @@ Data: 2020/09/18
 Llicència: GPL 3.0
 
 Traducció a Powershell: Alex Mocholi
-#20210325-03 - Es modifica ruta del Directori: "LinkatVM" - Damian Caviglia
 #>
 
 $workingDirectory = "C:\ProgramData\LinkatVM\"

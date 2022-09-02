@@ -10,7 +10,7 @@ Llicència: GPL 3.0
 Traducció a Powershell: Alex Mocholi
 #>
 
-$workingDirectory = "D:\"
+$workingDirectory = "C:\ProgramData\LinkatVM\"
 
 $UserResponse = [System.Windows.Forms.MessageBox]::Show("Voleu aturar la Linkat (PowerOff)?", "Linkat VM", 4)
 
