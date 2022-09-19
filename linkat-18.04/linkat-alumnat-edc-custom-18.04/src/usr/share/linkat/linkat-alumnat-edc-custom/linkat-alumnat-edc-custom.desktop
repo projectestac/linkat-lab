@@ -1,0 +1,6 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Terminal=false
+Name=Configuració de l'escriptori de l'alumne/a - EDC
+Exec=/usr/share/linkat/linkat-alumnat-edc-custom/linkat-alumnat-edc-custom.sh

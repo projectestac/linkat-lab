@@ -1,0 +1,16 @@
+Source: linkat-alumnat-edc-custom
+Section: misc
+Priority: optional
+Maintainer: Joan de Gracia <joan.degracia@gmail.com>
+Build-Depends: debhelper (>= 9.0.0)
+Standards-Version: 4.1.4
+Homepage: 
+#Vcs-Git: git://git.debian.org/collab-maint/linkat-alumnat-edc-custom.git
+#Vcs-Browser: http://git.debian.org/?p=collab-maint/linkat-alumnat-edc-custom-18.04.git;a=summary
+
+Package: linkat-alumnat-edc-custom
+Architecture: all
+Depends: ${misc:Depends}, lsb-release, zenity, unzip
+Description: Configura el perfil d'escriptori de l'alumnat - PEDC
+ - Aplica configuracions específiques a l'escriptori de l'alumnat del
+ Pla d'Educació Digital de Catalunya.

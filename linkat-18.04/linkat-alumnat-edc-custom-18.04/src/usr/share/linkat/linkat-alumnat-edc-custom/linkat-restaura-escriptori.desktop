@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Terminal=false
+Name=Restaura escriptori
+Comment=Aplicació per restaurar l'entorn d'escriptori de l'alumne/a
+Exec=/usr/share/linkat/linkat-alumnat-edc-custom/linkat-restaura-escriptori.sh
+Icon=/usr/share/linkat/linkat-alumnat-edc-custom/livesaver.svg
+Categories=GNOME;GTK;Utility;

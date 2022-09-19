@@ -1,0 +1,38 @@
+linkat-alumnat-edc-custom (18.04-1.0~9) bionic; urgency=low
+
+  * Release 1.0~9
+    - Canvi: es deshabilita l'avís de falta d'espai a la partició 
+      /opt/configuracio/mnt-recuperacio
+
+  * Release 1.0~8
+    - Canvi: s'ha canviat la URL per canviar la contrasenya AzureAD
+
+  * Release 1.0~7
+    - Afegit: URL per fer el canvi de contrasenya AzureAD
+
+  * Release 1.0~6
+    - Afegit: es programa la tecla Win per obrir el menu d'aplicacions.
+      Es programen les tecles <Control><Alt>l per bloquejar la pantalla.
+
+  * Release 1.0~5
+    - Afegit: modificacions del temps de bloqueig de pantalla
+      suspensió de màquina.
+      Afegida llançadora a la utilitat linkat-restaura-escriptoris
+
+  * Release 1.0~4
+    - Afegit: es mostra per pantalla els dies reals abans
+      no caduqui la contrasenya. 
+
+  * Release 1.0~3
+    - Afegit: Elimina perfil dels navegadors.
+      Elimina anell de claus.
+      Comprova validesa de la contrasenya i mostra
+      missatge per pantalla.
+
+  * Release 1.0~2
+    - Afegit: configuració pàgina inici Chromium i desactivació
+      assistent inicial login sessió. #spelling
+
+  * Initial release 1.0~1
+
+ -- Joan de Gracia <joan.degracia@gmail.com>  Thu, 29 Apr 2021 12:00:00 +0200
