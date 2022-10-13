@@ -1,0 +1,12 @@
+Package: linkat-conky-corporatiu
+Version: 18.04-3.0
+Architecture: all
+Maintainer: Joan de Gracia <joan.degracia@gmail.com>
+Installed-Size: 19
+Depends: lsb-release, conky, virt-what
+Section: misc
+Priority: optional
+Description: Personalització del paquet Conky per a la Linkat.
+ - Mostra el hostame i IP de l'ordinador per pantalla de forma dinàmica.
+ - Aquest paquet està preparat per a la maqueta Linkat
+   dels ordinadors corporatius.
