@@ -1,9 +1,11 @@
-linkat-usuari-corporatiu-custom (18.04-1.0~3) bionic; urgency=low
+linkat-usuari-corporatiu-custom (18.04-1.0~4) bionic; urgency=low
+
+  * Release 1.0~4: Canvi de fons de l'escriptori corporatiu.
 
   * Release 1.0~3: Modificacions script de personalització per amagar icona de
-    xarxa
+    xarxa.
 
-  * Release 1.0~2: Configuració del navegador Chromium perquè utilitzi DNI-e
+  * Release 1.0~2: Configuració del navegador Chromium perquè utilitzi DNI-e.
 
   * Initial release 1.0~1
 
