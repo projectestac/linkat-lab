@@ -8,11 +8,11 @@ source "$HOME"/.config/user-dirs.dirs
 
 # Definició del fons d'escriptori i tema de l'entorn GNOME
 #
-$GSETTINGS set org.gnome.desktop.screensaver picture-uri 'file:///usr/share/linkat/linkat-usuari-corporatiu-custom/background1600x900.jpg'
-$GSETTINGS set org.gnome.desktop.background picture-uri 'file:///usr/share/linkat/linkat-usuari-corporatiu-custom/background1600x900.jpg'
+$GSETTINGS set org.gnome.desktop.screensaver picture-uri 'file:///usr/share/linkat/linkat-usuari-corporatiu-custom/background1920x1080.jpg'
+$GSETTINGS set org.gnome.desktop.background picture-uri 'file:///usr/share/linkat/linkat-usuari-corporatiu-custom/background1920x1080.jpg'
 $GSETTINGS set org.gnome.desktop.screensaver picture-options 'zoom'
 $GSETTINGS set org.gnome.desktop.background picture-options 'zoom'
-$GSETTINGS set com.canonical.unity-greeter background 'file:///usr/share/linkat/linkat-usuari-corporatiu-custom/background1600x900.jpg'
+$GSETTINGS set com.canonical.unity-greeter background 'file:///usr/share/linkat/linkat-usuari-corporatiu-custom/background1920x1080.jpg'
 $GSETTINGS set org.gnome.desktop.wm.preferences theme 'Radiance'
 $GSETTINGS set org.gnome.desktop.interface gtk-theme 'Radiance'
 $GSETTINGS set com.canonical.indicator.session user-show-menu false

@@ -1,6 +1,0 @@
-[Desktop Entry]
-Version=1.0
-Type=Application
-Terminal=false
-Name=Configuració de l'escriptori de l'usuari/a corporatiu.
-Exec=/usr/share/linkat/linkat-usuari-corporatiu-custom/linkat-usuari-corporatiu.sh
