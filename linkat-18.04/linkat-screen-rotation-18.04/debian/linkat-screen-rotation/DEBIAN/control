@@ -1,0 +1,11 @@
+Package: linkat-screen-rotation
+Version: 18.04-1
+Architecture: all
+Maintainer: Joan de Gracia <joan.degracia@gmail.com>
+Installed-Size: 24
+Depends: zenity
+Section: misc
+Priority: optional
+Description: Bloqueig/desbloqueig de la rotació de la pantalla - PEDC.
+ - Aquest paquet bloca/desbloca la rotació de la pantalla del portàtil del PEDC.
+   La icona del programa s'ha obtingut de la web: https://www.flaticon.com

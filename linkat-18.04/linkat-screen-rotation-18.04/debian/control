@@ -1,0 +1,16 @@
+Source: linkat-screen-rotation
+Section: misc
+Priority: optional
+Maintainer: Joan de Gracia <joan.degracia@gmail.com>
+Build-Depends: debhelper (>= 9.0.0)
+Standards-Version: 4.1.4
+Homepage: 
+#Vcs-Git: git://git.debian.org/collab-maint/linkat-screen-rotation.git
+#Vcs-Browser: http://git.debian.org/?p=collab-maint/linkat-screen-rotation-18.04.git;a=summary
+
+Package: linkat-screen-rotation
+Architecture: all
+Depends: ${misc:Depends},zenity
+Description: Bloqueig/desbloqueig de la rotació de la pantalla - PEDC.
+ - Aquest paquet bloca/desbloca la rotació de la pantalla del portàtil del PEDC.
+   La icona del programa s'ha obtingut de la web: https://www.flaticon.com

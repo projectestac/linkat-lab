@@ -1,0 +1,14 @@
+linkat-mp-edc (18.04-1.0~3) bionic; urgency=low
+
+  * Release 1.0~3: actualització dependència amb el paquet:
+    linkat-screen-rotation
+
+  * Release 1.0~2: actualització de les dependències del paquet:
+    linkat-alta-usuaris-edc, linkat-alumnat-edc-custom, linkat-clamonacc,
+    linkat-conky-conf-edc, linkat-stat-edc, gufw, gnome-tweaks,
+    libpam-pwquality, keepassxc, linkat-caf-fix, linkat-portal-captiu,
+    linkat-lock-edc, linkat-reassigna-equips-edc
+
+  * Initial release 1.0~1
+
+ -- Joan de Gracia <joan.degracia@gmail.com>  Mon, 15 Feb 2021 12:00:00 +0200

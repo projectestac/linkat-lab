@@ -1,0 +1,12 @@
+Package: linkat-mp-edc
+Version: 18.04-1.0~3
+Architecture: all
+Maintainer: Joan de Gracia <joan.degracia@gmail.com>
+Installed-Size: 9
+Depends: linkat-alta-usuaris-edc, linkat-alumnat-edc-custom, linkat-clamonacc, linkat-conky-conf-edc, linkat-stat-edc, gufw, gnome-tweaks, libpam-pwquality, keepassxc, linkat-caf-fix, linkat-portal-captiu, linkat-lock-edc, linkat-reassigna-equips-edc, linkat-screen-rotation
+Section: misc
+Priority: optional
+Description: Metapaquet utilitzat per preparar les maquetes Linkat.
+ Paquet utilitzat per preparar les maquetes Linkat del Pla d'Educació Digital
+ de Catalunya.
+ (metapackage)

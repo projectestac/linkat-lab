@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Terminal=false
+Name=Bloca/desbloca la rotació de la pantalla
+Comment=Aplicació per blocar/desblocar la rotació de la pantalla.
+Exec=/usr/share/linkat/linkat-screen-rotation/linkat-screen-rotation.sh
+Icon=/usr/share/linkat/linkat-screen-rotation/lock-screen.png
+Categories=GNOME;GTK;Utility;
