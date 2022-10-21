@@ -1,0 +1,10 @@
+Package: linkat-usuari-corporatiu-custom
+Version: 18.04-1.0~5
+Architecture: all
+Maintainer: Joan de Gracia <joan.degracia@gmail.com>
+Installed-Size: 98
+Depends: lsb-release
+Section: misc
+Priority: optional
+Description: Configura el perfil d'escriptori de l'usuari corporatiu.
+ - Aplica configuracions específiques a l'escriptori de l'usuari corporatiu.

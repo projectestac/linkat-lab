@@ -1,4 +1,6 @@
-linkat-usuari-corporatiu-custom (18.04-1.0~4) bionic; urgency=low
+linkat-usuari-corporatiu-custom (18.04-1.0~5) bionic; urgency=low
+
+  * Release 1.0~5: Canvi de nom de la imatge de fons.
 
   * Release 1.0~4: Canvi de fons de l'escriptori corporatiu.
 
