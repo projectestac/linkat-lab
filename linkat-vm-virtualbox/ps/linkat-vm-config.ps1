@@ -6,20 +6,24 @@ Autor: Joan de Gracia
        Àrea de Cultura Digital - Departament d'Educació
 Data: 2020/09/29
 Llicència: GPL 3.0
-
-
+========================================================
 Actualització: 2022/08/10
 Versió VirtualBox 6.1.36
 Traducció a Powershell: Alex Mocholi
+========================================================
+Versió 1.1
+Autor del canvi: Javier Rodriguez
+Actualització: 2022/11/15
+Canvi: Únicament comprova que es trobi instal·lat el Virtual box a l'equip independentment de la versió
 #>
 
 $workingDirectory = "C:\ProgramData\LinkatVM\"
 $controlFile = "$Env:appdata\linkat-vm-flag"
-$vboxPkgName = "Oracle VM VirtualBox 6.1.36"
+$vboxPkgName = "Oracle VM VirtualBox*"
 
-# Comprovació si VirtualBox 6.1.36 es troba instal·lat
+# Comprovació si VirtualBox es troba instal·lat
 if (-Not (Get-Package $vboxPkgName -ErrorAction SilentlyContinue)) {
-    [System.Windows.Forms.MessageBox]::Show("No s'ha trobat Virtual Box 6.1.36, finalitzant execució.", "Linkat VM", 0)
+    [System.Windows.Forms.MessageBox]::Show("No s'ha trobat Virtual Box, finalitzant execució.", "Linkat VM", 0)
     exit
 }
 

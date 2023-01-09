@@ -1,2 +1,2 @@
 Scripts PowerShell per configurar una màquina virtual Linkat en VirtualBox
-REM Versió VirtualBox 6.1.36
+REM Versió VirtualBox 7.0.2
