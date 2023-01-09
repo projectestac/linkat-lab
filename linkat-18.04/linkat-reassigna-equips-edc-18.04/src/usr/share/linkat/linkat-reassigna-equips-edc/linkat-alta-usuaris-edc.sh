@@ -6,8 +6,7 @@ alumnePass=""
 alumnePassCheck=""
 adminUser="$(getent passwd 1000 | cut -d : -f 1)"
 res=""
-findUsers="$(awk -F : '$3 >= 1000 ' /etc/passwd | cut -d ":" -f 1 | grep -v 'nobody\|suport')"
-#findUsersCheck="$(awk -F : '$3 >= 1000 ' /etc/passwd | cut -d ":" -f 1 | grep -v 'nobody\|suport' |  sed '1~1 a\false\' | sed '1i false' | sed '$d')"
+findUsers="$(awk -F : '$3 >= 1000 && $3 <= 40000' /etc/passwd | cut -d ":" -f 1 | grep -v 'nobody\|suport')"
 usersArrayCheck=${#findUsersCheck[@]}
 usersArray=${#findUsers[@]}
 appAltaAlu="Linkat | Alta d'alumnat"
@@ -147,7 +146,7 @@ indexof()
 
 delete_menu ()
 {
-        findUsersCheck=($(awk -F : '$3 >= 1000 ' /etc/passwd | cut -d ":" -f 1 | grep -v 'nobody\|suport' |  sed '1~1 a\false\' | sed '1i false' | sed '$d'))
+	findUsersCheck=($(awk -F : '$3 >= 1000 && $3 <= 40000' /etc/passwd | cut -d ":" -f 1 | grep -v 'nobody\|suport' | sed '1~1 a\false\' | sed '1i false' | sed '$d'))
         yadb=0
         awk -F : '$3 >= 1000 ' /etc/passwd | cut -d ":" -f 1 | grep -v 'nobody\|suport'
         if [ $? -eq 0 ];then
@@ -210,7 +209,7 @@ delete_banner_end()
                 if [ $? -eq 1 ];then
                         yad \
                         --title="${appAltaAlu}" \
-                        --image="/usr/share/linkat/linkat-reassigna-equips-edc/linkat-alta-usuaris-edc.png" \
+                        --image="/usr/share/pixmaps/linkat-alta-usuaris-edc.png" \
                         --center \
                         --borders=20 \
                         --width=400 \
@@ -232,7 +231,7 @@ formulari_admin()
         --height=100 \
         --text-align=left \
         --text="\nIntroduïu una nova contrasenya per a l'usuari $adminUser.\n\nExemple: <b>C0ntr4S3ny4!</b>\n" \
-        --image="/usr/share/linkat/linkat-reassigna-equips-edc/linkat-alta-usuaris-edc.png" \
+        --image="/usr/share/pixmaps/linkat-alta-usuaris-edc.png" \
         --form --item-separator=" " \
         --field="Contrasenya":H \
         --field="Repetiu la contrasenya":H \
@@ -261,7 +260,7 @@ formulari()
         --height=100 \
         --text-align=left \
 	--text="\nAplicatiu d'alta d'alumnat.\nCal que empleneu tots els camps.\nL'identificador de l'alumne/a (IDALU) només pot contenir caràcters numérics.\n\nExemple: <b>012345678</b>\n" \
-        --image="/usr/share/linkat/linkat-reassigna-equips-edc/linkat-alta-usuaris-edc.png" \
+        --image="/usr/share/pixmaps/linkat-alta-usuaris-edc.png" \
         --form --item-separator=" " \
         --field="Identificador": \
 	--entry-text="Your name" \
@@ -379,6 +378,23 @@ check_form()
                 ERROR="1"
         fi
 
+        for idnum in "$1"; do
+            if [ ${#idnum} -lt 8 ]; then
+                yad \
+                --title="${appAltaAlu}" \
+                --image="dialog-error" \
+                --center \
+                --borders=20 \
+                --width=400 \
+                --height=100 \
+                --text-align=left \
+                --text="\nL'identificador ha de tenir una longitud mínima de 8 caràcters numérics." \
+                --button="D'acord"
+                ERROR="1"
+            fi
+        done
+
+
         if   [[ $(echo "$1" | awk '/[a-z]/ || /[A-Z]/ || /[[:punct:]]/') ]]; then
                 yad \
                 --title="${appAltaAlu}" \
@@ -478,6 +494,7 @@ add_user(){
         passExpireDate="$(date +%Y-%m-%d --date="+$passMaxDays days")"
 
         sudo adduser --gecos "$1" --disabled-password "$1"
+        sudo usermod -a -G uucp,dialout "$1"
         echo "$1:$2" | sudo chpasswd
         chage -M "$passMaxDays" --warndays $passWarnAge "$1"
         echo $passExpireDate > /home/$1/.caducitatPassword
@@ -556,7 +573,7 @@ if [ ! -z "$1" ]; then
         if [ $? -eq $SUCCESS ];then
                 yad \
                 --title="${appAltaAlu}" \
-                --image="/usr/share/linkat/linkat-reassigna-equips-edc/linkat-alta-usuaris-edc.png" \
+                --image="/usr/share/pixmaps/linkat-alta-usuaris-edc.png" \
                 --center \
                 --borders=20 \
                 --width=400 \
@@ -617,7 +634,7 @@ main_menu()
 {
 option=$(yad \
         --title="${appAltaAlu}" \
-        --image="/usr/share/linkat/linkat-reassigna-equips-edc/linkat-alta-usuaris-edc.png" \
+        --image="/usr/share/pixmaps/linkat-alta-usuaris-edc.png" \
         --center \
         --borders=20 \
         --width=400 \
