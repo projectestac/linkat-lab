@@ -54,7 +54,7 @@ sleep 1
 /usr/share/linkat/linkat-reassigna-equips-edc/linkat-lightdm-autologin.sh
 for id_usuari in $(getent passwd |cut -d ":" -f 3)
 do
-	if [ "$id_usuari" -gt 1000 ] && [ "$id_usuari" -le 60000 ]; then
+	if [ "$id_usuari" -gt 1000 ] && [ "$id_usuari" -le 40000 ]; then
 		USUARI="$(id -un "$id_usuari")"
 		/usr/sbin/userdel -r "$USUARI" > /dev/null 2>&1
 	fi

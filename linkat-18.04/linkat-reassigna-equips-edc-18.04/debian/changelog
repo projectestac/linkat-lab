@@ -1,4 +1,7 @@
-linkat-reassigna-equips-edc (18.04-1.0~3) bionic; urgency=low
+linkat-reassigna-equips-edc (18.04-1.0~4) bionic; urgency=low
+
+  * Release 1.0~4: updated linkat-alta-usuaris-edc.sh
+    and linkat-reassigna-equip-sistema.sh
 
   * Release 1.0~3: updated linkat-alta-usuaris-edc.sh
 

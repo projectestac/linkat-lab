@@ -146,9 +146,9 @@ indexof()
 
 delete_menu ()
 {
-	findUsersCheck=($(awk -F : '$3 >= 1000 && $3 <= 40000' /etc/passwd | cut -d ":" -f 1 | grep -v 'nobody\|suport' | sed '1~1 a\false\' | sed '1i false' | sed '$d'))
+	findUsersCheck=($(awk -F : '$3 >= 1000 && $3 <= 40000' /etc/passwd | cut -d ":" -f 1 | grep -v 'nobody\|suport\|snap' | sed '1~1 a\false\' | sed '1i false' | sed '$d'))
         yadb=0
-        awk -F : '$3 >= 1000 ' /etc/passwd | cut -d ":" -f 1 | grep -v 'nobody\|suport'
+        awk -F : '$3 >= 1000 && $3 <= 40000' /etc/passwd | cut -d ":" -f 1 | grep -v 'nobody\|suport\|snap'
         if [ $? -eq 0 ];then
                 while [ $yadb -eq "0" ];do
                 yadb=$?
